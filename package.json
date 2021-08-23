@@ -1,0 +1,13 @@
+{
+  "name": "fp-utils",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "Oladayo Fagbemi <oofagbemi@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "fp-ts": "^2.11.1"
+  }
+}
