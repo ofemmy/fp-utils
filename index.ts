@@ -1,11 +1,12 @@
-import { ifElse } from "./src/ifElse";
+import { hasPath } from "./src/hasPath";
 
 function main() {
-  const isEven = (x: number) => x % 2 === 0;
-  const ifEvenDo = ifElse(isEven, [
-    (y) => console.log(`${y} is not even`),
-    (x) => console.log(`${x} is even`),
-  ]);
-  ifEvenDo(4);
+  let res = hasPath(["contact", "names"])({
+    contact: {
+      name: "John Doe",
+      age: 42,
+    },
+  });
+  console.log(res)
 }
 main();

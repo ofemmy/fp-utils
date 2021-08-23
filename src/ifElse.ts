@@ -3,15 +3,15 @@ import { Predicate } from "fp-ts/Predicate";
  *Takes a unary predicate and applies the [onFalse,onTrue] tuple functions with the provided value depending on whether the predicate returns true or false
  *
  */
-export function ifElse<T>(
+export function ifElse<T, U>(
   predicate: Predicate<T>,
-  actions: [onFalse: (a: T) => void, onTrue: (a: T) => void]
-): (arg: T) => void {
+  actions: [onFalse: (a: T) => U, onTrue: (a: T) => U]
+): (arg: T) => U {
   return (arg: T) => {
     if (predicate(arg)) {
-      actions[1](arg);
+      return actions[1](arg);
     } else {
-      actions[0](arg);
+     return actions[0](arg);
     }
   };
 }
