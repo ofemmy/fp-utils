@@ -1,12 +1,7 @@
 import { hasPath } from "./src/hasPath";
 
 function main() {
-  let res = hasPath(["contact", "names"])({
-    contact: {
-      name: "John Doe",
-      age: 42,
-    },
-  });
-  console.log(res)
+  let res = hasPath(["a", "b","c"])({a:{b:undefined}});
+  console.log({ res });
 }
 main();

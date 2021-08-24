@@ -36,4 +36,10 @@ describe("hasPath", () => {
   test("should return true also of key is a number", () => {
     expect(hasPath([200])(testObj)).toBe(true);
   });
+  test("should return true if value is explicitly undefined", () => {
+    expect(hasPath(["a", "b"])({ a: { b: undefined } })).toBe(true);
+  });
+  test("should return false if value is after explicitly undefined", () => {
+    expect(hasPath(["a", "b", "c"])({ a: { b: undefined } })).toBe(false);
+  });
 });
