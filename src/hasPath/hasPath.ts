@@ -4,7 +4,7 @@ import { NonEmptyArray } from "fp-ts/NonEmptyArray";
  * @param props {NonEmptyArray<string>}
  * @returns {boolean}
  */
-export function hasPath(
+function hasPath(
   props: NonEmptyArray<string | number>
 ): (obj: any) => boolean {
   return function (obj: any): boolean {
@@ -29,3 +29,4 @@ function _hasKey(key: string | number, obj: any) {
 function _filterFalsy(array: Array<any>) {
   return array.filter(Boolean);
 }
+export default hasPath
